@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-api
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot-api
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: spring-boot-api
+    spec:
+      containers:
+        - name: spring-boot-starter
+          image: "gcr.io/spring-boot-project-273914/spring-boot-app:v1"
